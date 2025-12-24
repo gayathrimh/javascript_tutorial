@@ -104,6 +104,10 @@ return response.json()
 
 console.log('load products');
 
+  }).catch((error)=>{
+    console.log('Unexpected error.Please try again later.');
+
+    
   });
   return promise;
 }
@@ -127,7 +131,9 @@ console.log('load products');
 fun();
 
 });
-
+xhr.addEventListener('error',(error)=>{
+console.log('Unexpected error.Please try again later.');
+});
 
 
   xhr.open('GET','https://supersimplebackend.dev/products');
